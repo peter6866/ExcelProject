@@ -1,6 +1,7 @@
 import openpyxl
 from datetime import datetime
 from openpyxl.utils import get_column_letter
+from openpyxl.chart import Series, LineChart, Reference
 
 print("输入文件名：")
 fileName = input()
@@ -190,5 +191,9 @@ for n in range(index + 1, sheet.max_row + 1):
 
 sheet.column_dimensions[get_column_letter(3)].width = 13
 sheet.column_dimensions[get_column_letter(15)].width = 13
+
+# TODO: make charts
+chart1 = LineChart()
+# data1 = Reference(sheet, )
 
 book.save(fileName + '结果' + '.xlsx')
