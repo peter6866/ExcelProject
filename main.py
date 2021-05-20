@@ -2,6 +2,13 @@ import openpyxl
 from datetime import datetime
 from openpyxl.utils import get_column_letter
 from openpyxl.chart import Series, LineChart, Reference
+import mysql.connector
+
+database = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="20010518Hjy13"
+)
 
 print("输入文件名：")
 fileName = input()
