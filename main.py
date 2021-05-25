@@ -1,7 +1,18 @@
 import openpyxl
+import mysql.connector
 from datetime import datetime
 from openpyxl.utils import get_column_letter
 from openpyxl.chart import Series, LineChart, Reference
+
+mydb = mysql.connector.connect(
+    host="localhost",  # 数据库主机地址
+    user="root",  # 数据库用户名
+    passwd="20010518Hjy13",  # 数据库密码
+    auth_plugin='mysql_native_password',
+    database='peter'
+)
+
+myCursor = mydb.cursor()
 
 print("输入文件名：")
 fileName = input()
